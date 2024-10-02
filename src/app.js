@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const urlRouter = require('./routes/url.route.js');
-
+const URL = require('./models/url.models.js');
 const app = express();
 
 app.use(cors({
@@ -12,8 +12,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use('/api/v1/url', urlRouter);
-app.get('/:shortId', async (req, res) => {
-    const shortId = req.params.shoortId;
+app.get('/api/v1/:shortId', async (req, res) => {
+    const shortId = req.params.shortId;
     const entry = await URL.findOneAndUpdate({
         shortId
     },
@@ -23,6 +23,6 @@ app.get('/:shortId', async (req, res) => {
             }
         }
     );
-    res.redirect(entry.redirectURL);
+    res.redirect(entry.redirectUrl);
 })
 module.exports = app;

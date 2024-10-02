@@ -1,4 +1,4 @@
-const { v4: uuidv4 } = require('uuid');
+// const nanoid = require('nanoid');
 const URL = require('../models/url.models.js');
 const { asyncHandler } = require('../utils/asyncHandler.js');
 
@@ -8,13 +8,14 @@ const handleGenerateNewShortURL = asyncHandler(async (req, res) => {
     if (!url) {
         return res.status(400).json({ message: 'URL is required' });
     }
-    const uuid = uuidv4();
+    const { nanoid } = await import('nanoid');
+    const nanoId = nanoid(8);
     await URL.create({
-        shortId: uuid,
-        redirectURL: url,
+        shortId: nanoId,
+        redirectUrl: url,
         visitHistory: []
     });
-    return res.json({ id: uuid });
+    return res.json({ id: nanoId });
 })
 
 const handleGetAnalytics = asyncHandler(async function (req, res) {
