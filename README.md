@@ -1,55 +1,105 @@
-# URL Shortener
+# URL Shortener Service
 
-A simple URL shortener service built with [your technology stack, e.g., Node.js, Express, MongoDB].
+A modern URL shortener service built with Node.js, Express, and MongoDB, featuring URL analytics and user management.
+
+## Tech Stack
+
+- Backend: Node.js + Express.js
+- Database: MongoDB
+- Authentication: JWT
+
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB (v4.4 or higher)
+- npm
+
+## Local Development Setup
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/dexter-ifti/url-shortener.git
+   cd url-shortener
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Environment Configuration**
+   ```bash
+   cp .env.example .env
+   ```
+   Configure the following variables in `.env`:
+   ```
+   PORT=3000
+   MONGODB_URI=mongodb://localhost:27017/urlshortener
+   JWT_SECRET=your_jwt_secret
+   BASE_URL=http://localhost:3000
+   ```
+
+4. **Start MongoDB**
+   ```bash
+   # Make sure MongoDB is running locally
+   mongod
+   ```
+
+5. **Run the Application**
+   ```bash
+   # Development mode
+   npm run dev
+
+   # Production mode
+   npm start
+   ```
+
+## API Endpoints
+
+### URL Operations
+- `POST /api/v1/url`
+  - Shorten a new URL
+  - Body: `{ "longUrl": "https://example.com" }`
+
+- `GET /api/v1/url/analytics/:shortId`
+  - Get URL statistics
+
 
 ## Features
 
-- Shorten long URLs
-- Redirect to original URLs
-- Track URL usage statistics
+- **URL Shortening**
+  - Custom short code generation
 
-## Installation
+- **Analytics**
+  - Click tracking
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/dexter-ifti/url-shortener.git
-    cd url-shortener
-    ```
+## Error Handling
 
-2. Install dependencies:
-    ```sh
-    npm install
-    ```
+The API returns standard HTTP status codes:
+- 200: Success
+- 400: Bad Request
+- 401: Unauthorized
+- 404: Not Found
+- 500: Server Error
 
-3. Set up environment variables:
-    ```sh
-    cp .env.example .env
-    # Edit .env with your configuration
-    ```
+## Security Measures
 
-4. Start the application:
-    ```sh
-    npm run dev
-    ```
-
-## Usage
-
-1. Open your browser and navigate to `http://localhost:3000`.
-2. Enter a long URL to get a shortened version.
-3. Use the shortened URL to be redirected to the original URL.
+- Input validation
+- CORS configuration
 
 ## Contributing
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Create a new Pull Request.
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contact
+## Support
 
-For any inquiries, please contact [Email](tiftikhar@student.iul.ac.in).
+For support, email tiftikhar@student.iul.ac.in or open an issue in the repository.
