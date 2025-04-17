@@ -104,4 +104,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support, email tiftikhar@student.iul.ac.in or open an issue in the repository.
 
-<!-- GitAds-Verify: KK15KNHB3AGW9A2G49872EEUJGJRKH6T -->
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=dexter-ifti/url-shortner@github)](https://gitads.dev/v1/ad-track?source=dexter-ifti/url-shortner@github)
+
