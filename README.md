@@ -103,3 +103,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 For support, email tiftikhar@student.iul.ac.in or open an issue in the repository.
+
+<!-- GitAds-Verify: KK15KNHB3AGW9A2G49872EEUJGJRKH6T -->
